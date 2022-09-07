@@ -1,3 +1,4 @@
+let countdown = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 4; index++) {
         basic.showArrow(ArrowNames.North)
@@ -18,6 +19,12 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(200)
     }
 })
-input.onButtonPressed(Button.AB, function () {
-	
+input.onButtonPressed(Button.B, function () {
+    countdown = 10
+    while (countdown >= 0) {
+        basic.showNumber(countdown)
+        basic.pause(1000)
+        countdown += -1
+    }
+    basic.showString("Lift Off!")
 })
